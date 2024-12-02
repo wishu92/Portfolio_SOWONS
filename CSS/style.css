@@ -1,0 +1,145 @@
+:root {
+    --background-color: #000000;
+    --main-text-color: #F7F7F7;
+    --sub-text-color: #C7C7C7;
+    --accent-color: #7D7D7D;
+    --shadow-color: #3E3E3E;
+}
+
+body {
+    font-family: "Crimson Pro";
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    /* <weight>: Use a value from 200 to 900 */
+    
+    font-family: "Noto Sans KR";
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    /* <weight>: Use a value from 100 to 900 */
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+body > section {
+    padding: 0 32px;
+    background-color: var(--background-color);
+}
+
+.branding-page {
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+}
+
+.branding-tg {
+    padding-left: 10%;
+}
+
+h1 {
+    font-size: 110px;
+    color: var(--main-text-color);
+    font-family: "Crimson Pro";
+    font-weight: 800;
+}
+
+h1 > span {
+    color: var(--accent-color);
+}
+
+hr {
+    border-color: var(--accent-color);
+    width: 700px;
+}
+
+.branding-tg > p {
+    color: var(--accent-color);
+    font-size: 22px;
+    font-weight: 600px;
+    line-height: 36px;
+}
+
+.branding-tg > p > span {
+    color: var(--main-text-color);
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.scroll-bar > p {
+    color: var(--main-text-color);
+    font-weight: 300;
+}
+
+.scroll-bar {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 30px;
+    height: 80px;
+    border: 1px solid black;
+}
+
+.mouse {
+    width: 30px;
+    height: 56px;
+    border: 2px solid var(--main-text-color);
+    border-radius: 16px;
+    box-sizing: border-box;
+    position: absolute;
+    animation: mouse-animation 2s infinite;
+}
+
+.wheel {
+    width: 8px;
+    height: 8px;
+    background-color: var(--main-text-color);
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 25%;
+    transform: translate(-50%, -50%);
+    animation: wheel-animation infinite 2s;
+}
+
+@keyframes mouse-animation {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    
+    33% {
+        top: 0;
+        opacity: 1;
+        transform: scale(1);
+        
+    }
+
+    66% {
+        top: 24px;
+        opacity: 1;
+    }
+    
+    100% {
+        top: 24px;
+        opacity: 0;
+    }
+}
+
+@keyframes wheel-animation {
+    33% {
+        top :25%;
+    }
+    66% {
+        top: 75%;
+    }
+    100% {
+        top: 75%;
+    }
+    
+}
