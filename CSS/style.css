@@ -44,6 +44,17 @@ body > section {
 
 .branding-tg {
     padding-left: 10%;
+    position: relative;
+}
+
+.branding-tg::before {
+    content: '';
+    border-color: var(--main-text-color);
+    width: 650px;
+    height: 2px;
+    position: absolute;
+    top: 72%;
+    z-index: 1;
 }
 
 h1 {
@@ -55,11 +66,6 @@ h1 {
 
 h1 > span {
     color: var(--accent-color);
-}
-
-hr {
-    border-color: var(--accent-color);
-    width: 700px;
 }
 
 .branding-tg > p {
@@ -75,13 +81,13 @@ hr {
     font-weight: 500;
 }
 
-.scroll-bar > p {
+.scroll-down > p {
     color: var(--main-text-color);
     font-weight: 300;
     font-size: 16px;
 }
 
-.scroll-bar {
+.scroll-down {
     position: absolute;
     bottom: 20px;
     left: 50%;
@@ -278,8 +284,8 @@ h4 {
 }
 
 .about-me-explain {
-    color: var(--main-text-color);
-    font-size: 20px;
+    color: var(--accent-color);
+    font-size: 18px;
     line-height: 26px;
 }
 
@@ -702,9 +708,11 @@ h2 {
 
 .contact-information > ul {
     width: 750px;
+    padding-top: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+
 }
 
 .contact-information li {

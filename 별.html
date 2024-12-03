@@ -23,23 +23,21 @@
 </head>
 
 <body>
-    <section class="branding-page-container">
+    <section id="starCanvas">
+        <!-- <canvas id="starCanvas"></canvas> -->
         <div class="branding-page">
             <div class="branding-tg">
                 <h1>
                     SOWON<span>&#39;s</span><br>
                     PORTFOLIO
                 </h1>
+                <hr>
                 <p>
                     안녕하세요. 현실에 안주하지 않고 도전하는 것을 좋아하며&#44; <br>
-                    지속적으로 성장하고 있는 
-                    <span>
-                        웹 퍼블리셔 김소원
-                    </span>
-                    입니다&#46;
+                    지속적으로 성장하고 있는 <span>웹 퍼블리셔 김소원</span> 입니다&#46;
                 </p>
             </div>
-            <div class="scroll-down">
+            <div class="scroll-bar">
                 <p>Scroll Down</p>
                 <div class="mouse">
                     <div class="wheel"></div>
@@ -80,7 +78,6 @@
     <section class="profile-page-container">
         <div class="profile-page">
             <div class="h3-container">
-                <!-- h2로 바꾸고 -->
                 <h3>PROFILE</h3>
             </div>
             <div class="detail-container">
@@ -88,11 +85,9 @@
                     <img src="IMG/증명사진.png" alt="증명사진">
                 </figure>
                 <div class="about-me-container">
-                    <!-- h3으로 바꾸고 -->
                     <h4>About me</h4>
                     <ul class="about-me-tg">
                         <li>
-                            <!-- p -->
                             <h7>Name</h7>
                             <p>Kim So Won</p>
                         </li>
@@ -145,7 +140,7 @@
             <div class="h3-container">
                 <h3>RESUME</h3>
             </div>
-            <ul class="resume-list-title button">
+            <ul class="resume-list-title">
                 <li>
                     <h5>Work&#45;Experience</h5>
                 </li>
@@ -259,7 +254,6 @@
                     </div>
                 </figure>
                 <div class="project-tg furniture-tg">
-                    <!-- h2인데 class주기 -->
                     <h2 class="furniture-color">Furniture Lab</h2>
                     <p>홈페이지 리뉴얼</p>
                     <p class="explain">
@@ -313,7 +307,7 @@
                         <p>02</p>
                         <a class="contact-way" href="#">
                             <p>Cell&#45;Phone</p>
-                            <p>010&#45;3201&#45;3393</p>  
+                            <p>010&#45;3201&#45;3393</p>
                         </a>
                     </li>
                 </ul>
@@ -323,9 +317,80 @@
 
 </body>
 
-</html>
+<script>
+    const canvas = document.getElementById('starCanvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
-<!-- 폰,콜 누르면 가는거,
-기획서 모달창 고민하기
-퍼니처랩 바꾸기
- -->
+    class Star {
+        constructor(x, y, radius, color) {
+            this.x = x;
+            this.y = y;
+            this.radius = radius;
+            this.color = color;
+            this.flickerInterval = Math.floor(Math.random() * 50) + 50;
+            this.flickerCounter = 0;s
+        }
+
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+            ctx.fillStyle = this.color;
+            ctx.fill();
+            ctx.closePath();
+        }
+
+        update() {
+            this.flickerCounter++;
+
+            if (this.flickerCounter === this.flickerInterval) {
+                this.radius = getRandom(0.5, 2);
+                this.color = `rgba(255, 255, 255, ${getRandom(0.3, 1)})`;
+                this.flickerCounter = 0;
+                this.flickerInterval = Math.floor(Math.random() * 50) + 50;
+            }
+
+            this.draw();
+        }
+    }
+
+    function getRandom(min, max) {
+        return Math.random() * (max - min) + min;
+    }
+
+    function spawnStars() {
+        const x = getRandom(0, canvas.width);
+        const y = getRandom(0, canvas.height);
+        const radius = getRandom(0.5, 2);
+        const color = `rgba(255, 255, 255, ${getRandom(0.3, 1)})`;
+        return new Star(x, y, radius, color);
+    }
+
+    let stars;
+    function init() {
+        stars = [];
+
+        for (let i = 0; i < 200; i++) {
+            stars.push(spawnStars());
+        }
+    }
+
+    function animate() {
+        requestAnimationFrame(animate);
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        stars.forEach(star => {
+            star.update();
+        });
+    }
+
+    init();
+    animate();
+
+
+
+
+</script>
+
+</html>

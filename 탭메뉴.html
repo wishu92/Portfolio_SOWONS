@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab Menu</title>
+    <style>
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tabs button {
+            padding: 10px 20px;
+            border: 1px solid #ccc;
+            background: #f0f0f0;
+            cursor: pointer;
+        }
+
+        .tabs button.active {
+            background: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+
+        .tab-content {
+            opacity: 0;
+            /* 처음에는 보이지 않음 */
+            transition: opacity 0.5s ease;
+            /* 서서히 나타나는 효과 */
+            height: 0;
+            /* 높이 초기화 */
+            overflow: hidden;
+            /* 보이지 않는 내용 숨김 */
+        }
+
+        .tab-content.active {
+            opacity: 1;
+            /* 완전히 보임 */
+            height: auto;
+            /* 높이를 콘텐츠 크기에 맞춤 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tabs">
+        <button class="tab-btn active" data-tab="1">Tab 1</button>
+        <button class="tab-btn" data-tab="2">Tab 2</button>
+        <button class="tab-btn" data-tab="3">Tab 3</button>
+    </div>
+    <div class="tab-contents">
+        <div class="tab-content active" id="tab-1">Content for Tab 1</div>
+        <div class="tab-content" id="tab-2">Content for Tab 2</div>
+        <div class="tab-content" id="tab-3">Content for Tab 3</div>
+    </div>
+    <script>
+        // script.js
+
+        // 모든 탭 버튼과 탭 콘텐츠 가져오기
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        // 탭 버튼 클릭 이벤트 처리
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const targetTab = button.getAttribute('data-tab');
+
+                // 모든 버튼의 'active' 클래스 제거
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+
+                // 모든 콘텐츠의 'active' 클래스 제거
+                tabContents.forEach(content => content.classList.remove('active'));
+
+                // 클릭된 버튼과 연결된 콘텐츠에 'active' 클래스 추가
+                button.classList.add('active');
+                document.getElementById(`tab-${targetTab}`).classList.add('active');
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>
