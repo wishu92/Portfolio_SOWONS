@@ -20,6 +20,8 @@
         href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=Gowun+Batang&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
 
+
+    <link rel="stylesheet" href="CSS/tab.menu.css">
 </head>
 
 <body>
@@ -32,7 +34,7 @@
                 </h1>
                 <p>
                     안녕하세요. 현실에 안주하지 않고 도전하는 것을 좋아하며&#44; <br>
-                    지속적으로 성장하고 있는 
+                    지속적으로 성장하고 있는
                     <span>
                         웹 퍼블리셔 김소원
                     </span>
@@ -118,19 +120,33 @@
                 <h3>Skill</h3>
                 <ul>
                     <li class="circle skill-html">
-                        <p>HTML <br><span>80&#37;</span></p>
+                        <p>
+                            HTML<br>
+                            <span>80&#37;</span>
+                        </p>
                     </li>
                     <li class="circle skill-css">
-                        <p>CSS <br><span>70&#37;</span></p>
+                        <p>
+                            CSS<br>
+                            <span>70&#37;</span>
+                        </p>
                     </li>
                     <li class="circle skill-js">
-                        <p>Javascript <br><span>30&#37;</span></p>
+                        <p>
+                            Javascript<br>
+                            <span>30&#37;</span>
+                        </p>
                     </li>
                     <li class="circle skill-figma">
-                        <p>Figma <br><span>70&#37;</span></p>
+                        <p>
+                            Figma<br>
+                            <span>70&#37;</span>
+                        </p>
                     </li>
                     <li class="circle skill-photoshop">
-                        <p>Photoshop <br><span>80&#37;</span></p>
+                        <p>Photoshop<br>
+                            <span>80&#37;</span>
+                        </p>
                     </li>
                 </ul>
             </div>
@@ -142,75 +158,113 @@
             <div class="h2-container">
                 <h2>RESUME</h2>
             </div>
-            <ul class="resume-list-title button">
-                <li>
-                    <h4>Work&#45;Experience</h4>
-                </li>
-                <li>
-                    <h4>Self&#45;Introduction</h4>
-                </li>
-                <li>
-                    <h4>Character</h4>
-                </li>
-            </ul>
-            <div class="standard-box">
-                <!-- before, after가 반응형 때 중구난방이라 박스로 하나 감싸주어 기준점을 통일시킴 -->
-                <ul class="work-experience">
-                    <li class="line-short">
-                        <p class="date">
-                            2014&#46;05&#126;2016&#46;05
-                        </p>
-                        <div class="company">
-                            <p class="company-name">
-                                <span>국민건강보험공단 일산병원</span>
-                                &#40;간호사&#41;
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="1">
+                    Work&#45;Experience
+                </button>
+                <button class="tab-btn" data-tab="2">
+                    Self&#45;Introduction
+                </button>
+                <button class="tab-btn" data-tab="3">
+                    Character
+                </button>
+            </div>
+            <div class="tab-contents">
+                <div class="tab-content active" id="tab-1">
+                    <ul class="work-experience">
+                        <li class="line-vertical">
+                        </li>
+                        <li class="line-short">
+                            <p class="date">
+                                2014&#46;05&#126;2016&#46;05
                             </p>
-                        </div>
-                    </li>
-                    <li class="line-long">
-                        <p class="date">
-                            2017&#46;02&#126;2018&#46;07
-                        </p>
-                        <div class="company">
-                            <p class="company-name">
-                                <span>신촌세브란스병원</span>&#40;
-                                심장혈환병원 연구간호사&#41;
+                            <div class="company">
+                                <p class="company-name">
+                                    <span>
+                                        국민건강보험공단 일산병원
+                                    </span>
+                                    &#40;간호사&#41;
+                                </p>
+                            </div>
+                        </li>
+                        <li class="line-long">
+                            <p class="date">
+                                2017&#46;02&#126;2018&#46;07
                             </p>
-                        </div>
-                    </li>
-                    <li class="line-short">
-                        <p class="date">
-                            2021&#46;04&#126;2023&#46;04
-                        </p>
-                        <div class="company">
-                            <p class="company-name">
-                                <span>가톨릭대학교 은평성모병원</span>
-                                &#40;간호사&#41;
+                            <div class="company">
+                                <p class="company-name">
+                                    <span>
+                                        신촌세브란스병원
+                                    </span>
+                                        &#40;심장혈환병원 연구간호사&#41;
+                                </p>
+                            </div>
+                        </li>
+                        <li class="line-short">
+                            <p class="date">
+                                2021&#46;04&#126;2023&#46;04
                             </p>
-                        </div>
-                    </li>
-                    <li class="line-long">
-                        <p class="date">
-                            2024&#46;04&#126;2024&#46;12
-                        </p>
-                        <div class="company">
-                            <p class="company-name">
-                                <span>sbs컴퓨터아카데미학원</span>
-                                &#40;웹퍼블리셔 과정 수강&#41;
+                            <div class="company">
+                                <p class="company-name">
+                                    <span>
+                                        가톨릭대학교 은평성모병원
+                                    </span>
+                                    &#40;간호사&#41;
+                                </p>
+                            </div>
+                        </li>
+                        <li class="line-long">
+                            <p class="date">
+                                2024&#46;04&#126;2024&#46;12
                             </p>
-                        </div>
-                    </li>
-                    <li class="line-short">
-                        <p class="date">
-                            &#126;현재
-                        </p>
-                        <div class="company">
-                            <p class="company-name">
-                                <span>웹퍼블리셔 입사 준비중</span>
+                            <div class="company">
+                                <p class="company-name">
+                                    <span>
+                                        sbs컴퓨터아카데미학원
+                                    </span>
+                                    &#40;웹퍼블리셔 과정 수강&#41;
+                                </p>
+                            </div>
+                        </li>
+                        <li class="line-short">
+                            <p class="date">
+                                &#126;현재
                             </p>
-                        </div>
-                    </li>
-                </ul>
+                            <div class="company">
+                                <p class="company-name">
+                                    <span>
+                                        웹퍼블리셔 입사 준비중
+                                    </span>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-content" id="tab-2">
+                    <ul class="self-introduction">
+                        <li>
+                            <p>
+                                &#34;기본에 충실하게&#34;
+                            </p>
+                            <span>
+                                화려한 도구없이 망치와 못으로만 집을 지을 수 있어야 역량이 큰 사람이라는 선생님의 말씀을 새기며<br>
+                                기본에 충실히 공부하였습니다. 시맨틱 코드를 이용해 유지보수가 쉬운 마크업을 위해 노력합니다. 
+                            </span>
+                        </li>
+                        <li>
+                            <p>
+                                &#34;끈기있게 도전하기&#34;
+                            </p>
+                            <span>
+                                현재에 안주하기보다 지속적으로 도전하며 트렌드를 파악하고 습득하려 노력하겠습니다.<br>
+                                Vue, React에 관심을 가지고 있습니다.
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-content" id="tab-3">
+                    Content for Tab 3
+                </div>
             </div>
         </div>
     </section>
@@ -263,7 +317,7 @@
                     </div>
                 </figure>
                 <div class="project-tg furniture-tg">
-                    <h2 class= "project-name furniture-color">Furniture Lab</h2>
+                    <h2 class="project-name furniture-color">Furniture Lab</h2>
                     <p>홈페이지 리뉴얼</p>
                     <p class="explain">
                         현재 트렌드에 맞게 자연과 일상의 조화와<br>
@@ -316,7 +370,7 @@
                         <p>02</p>
                         <a class="contact-way" href="#">
                             <p>Cell&#45;Phone</p>
-                            <p>010&#45;3201&#45;3393</p>  
+                            <p>010&#45;3201&#45;3393</p>
                         </a>
                     </li>
                 </ul>
@@ -324,8 +378,8 @@
         </div>
     </section>
 
+    <script src="JS/tab_menu.js"></script>
 </body>
-
 </html>
 
 <!-- 폰,콜 누르면 가는거,
