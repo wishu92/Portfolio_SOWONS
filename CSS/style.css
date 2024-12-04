@@ -35,6 +35,11 @@ body > section {
     background-color: var(--background-color);
 }
 
+#starCanvas {
+    display: block;
+    position: absolute;
+}
+
 .branding-page {
     height: 100vh;
 
@@ -484,7 +489,7 @@ h3 {
 
 .self-introduction {
     width: 100%;
-    padding-top: 130px;
+    padding-top: 150px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -500,7 +505,7 @@ h3 {
     font-style: italic;
     color: var(--shadow-color);
     position: absolute;
-    top: -5%;
+    top: 0%;
     left: 10%;
 }
 
@@ -511,7 +516,7 @@ h3 {
     height: 1px;
     background-color: var(--accent-color);
     position: absolute;
-    top: 25%;
+    top: 30%;
 }
 
 .self-introduction > li {
@@ -532,6 +537,82 @@ h3 {
     font-weight: 300;
     text-align: center;
 }
+
+.character {
+    width: 100%;
+    height: 500px;
+    position: relative;
+}
+
+.character > ul {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.character::after{
+    content: 'Character';
+    font-size: 80px;
+    font-family: "Crimson Pro";
+    font-weight: 500;
+    font-style: italic;
+    color: var(--shadow-color);
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}
+
+.character li {
+    position: absolute;
+    color: var(--main-text-color);
+    font-size: 22px;
+    font-weight: 300;
+}
+
+.pentagon {
+    width: 260px;
+    height: 260px;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.character1 {
+    top: 10%;
+    left: 45%;
+}
+
+.character2 {
+    top: 35%;
+    left: 24%;
+}
+
+.character3 {
+    bottom: 22%;
+    left: 31%;
+}
+
+.character4 {
+    bottom: 22%;
+    right: 28%;
+}
+
+.character5 {
+    top: 37%;
+    right: 18%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
