@@ -7,7 +7,9 @@
     <title>Document</title>
     <link rel="stylesheet" href="CSS/reset.css">
     <link rel="stylesheet" href="CSS/style.css">
-
+    <link rel="stylesheet" href="CSS/tab.menu.css">
+    <link rel="stylesheet" href="CSS/dot_navigation.css">
+    <link rel="stylesheet" href="CSS/circle_progress.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,14 +22,12 @@
         href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=Gowun+Batang&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
 
-
-    <link rel="stylesheet" href="CSS/tab.menu.css">
 </head>
 
 <body>
-    <section class="branding-page-container">
+    <section id="home" class="branding-page-container section">
+        <canvas id="starCanvas"></canvas>
         <div class="branding-page">
-            <canvas id="starCanvas"></canvas>
             <!-- canvas-이미지태그 같은거 -->
             <div class="branding-tg">
                 <h1>
@@ -49,40 +49,18 @@
                     <div class="wheel"></div>
                 </div>
             </div>
-            <aside>
-                <ul class="page-list">
-                    <li>
-                        <a href="#">
-                            <span>Home</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span>Profile</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span>Resume</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span>Portfolio</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span>Contact</span>
-                        </a>
-                    </li>
-                </ul>
+            <aside class="dot-navigation">
+                <div class="dot" data-target="home">Home</div>
+                <div class="dot" data-target="profile">Profile</div>
+                <div class="dot" data-target="resume">Resume</div>
+                <div class="dot" data-target="portfolio">Portfolio</div>
+                <div class="dot" data-target="contact">Contact</div>
             </aside>
         </div>
 
     </section>
 
-    <section class="profile-page-container">
+    <section id="profile" class="profile-page-container section">
         <div class="profile-page">
             <div class="h2-container">
                 <h2>PROFILE</h2>
@@ -121,42 +99,63 @@
             </div>
             <div class="skill-container">
                 <h3>Skill</h3>
-                <ul>
-                    <li class="circle skill-html">
-                        <p>
-                            HTML<br>
-                            <span>80&#37;</span>
-                        </p>
-                    </li>
-                    <li class="circle skill-css">
-                        <p>
-                            CSS<br>
-                            <span>70&#37;</span>
-                        </p>
-                    </li>
-                    <li class="circle skill-js">
-                        <p>
-                            Javascript<br>
-                            <span>30&#37;</span>
-                        </p>
-                    </li>
-                    <li class="circle skill-figma">
-                        <p>
-                            Figma<br>
-                            <span>70&#37;</span>
-                        </p>
-                    </li>
-                    <li class="circle skill-photoshop">
-                        <p>Photoshop<br>
-                            <span>80&#37;</span>
-                        </p>
-                    </li>
-                </ul>
+                <div class="progress-container">
+                    <div class="progress-bar html" data-percentage="80">
+                        <svg>
+                            <circle cx="100" cy="100" r="100"></circle>
+                            <circle cx="100" cy="100" r="100"></circle>
+                        </svg>
+                        <div class="text_zone">
+                            <div class="label html-color">HTML</div>
+                            <div class="percentage">0%</div>
+                        </div>
+                    </div>
+                    <div class="progress-bar css" data-percentage="90">
+                        <svg>
+                            <circle cx="100" cy="100" r="100"></circle>
+                            <circle cx="100" cy="100" r="100"></circle>
+                        </svg>
+                        <div class="text_zone">
+                            <div class="label css-color">CSS</div>
+                            <div class="percentage">0%</div>
+                        </div>
+                    </div>
+                    <div class="progress-bar javascript" data-percentage="60">
+                        <svg>
+                            <circle cx="100" cy="100" r="100"></circle>
+                            <circle cx="100" cy="100" r="100"></circle>
+                        </svg>
+                        <div class="text_zone">
+                            <div class="label javascript-color">JavaScript</div>
+                            <div class="percentage">0%</div>
+                        </div>
+                    </div>
+                    <div class="progress-bar figma" data-percentage="80">
+                        <svg>
+                            <circle cx="100" cy="100" r="100"></circle>
+                            <circle cx="100" cy="100" r="100"></circle>
+                        </svg>
+                        <div class="text_zone">
+                            <div class="label figma-color">Figma</div>
+                            <div class="percentage">0%</div>
+                        </div>
+                    </div>
+                    <div class="progress-bar photoshop" data-percentage="70">
+                        <svg>
+                            <circle cx="100" cy="100" r="100"></circle>
+                            <circle cx="100" cy="100" r="100"></circle>
+                        </svg>
+                        <div class="text_zone">
+                            <div class="label photoshop-color">Photoshop</div>
+                            <div class="percentage">0%</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="resume-page-container">
+    <section id="resume" class="resume-page-container section">
         <div class="resume-page">
             <div class="h2-container">
                 <h2>RESUME</h2>
@@ -294,7 +293,7 @@
         </div>
     </section>
 
-    <section class="portfolio-page-container">
+    <section id="portfolio" class="portfolio-page-container section">
         <div class="portfolio-page">
             <div class="h2-container">
                 <h2>PORTFOLIO</h2>
@@ -372,7 +371,7 @@
         </div>
     </section>
 
-    <section class="contact-page-container">
+    <section id="contact" class="contact-page-container section">
         <div class="contact-page">
             <div class="h2-container">
                 <h2>CONTACT</h2>
@@ -405,11 +404,15 @@
 
     <script src="JS/tab_menu.js"></script>
     <script src="JS/star_bg.js"></script>
+    <script src="JS/dot_navigation.js"></script>
+    <script src="JS/circle_progress.js"></script>
 </body>
 
 </html>
 
 <!-- 폰,콜 누르면 가는거,
 기획서 모달창 고민하기
-퍼니처랩 바꾸기
+뷰 버튼 누르는거
+헤더부분 애니메이션
+반응형
  -->
