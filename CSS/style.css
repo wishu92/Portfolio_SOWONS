@@ -61,11 +61,10 @@ body>section {
 .branding-tg::after {
     content: '';
     background-color: var(--accent-color);
-    width: 650px;
+    width: 600px;
     height: 1px;
     position: absolute;
     top: 72%;
-    z-index: 1;
 }
 
 h1 {
@@ -131,6 +130,7 @@ h1>span {
         transform: translateX(-70%);
         /* 시작 위치 */
     }
+
     to {
         transform: translateX(0);
         /* 한 텍스트 길이만큼 오른쪽으로 이동 */
@@ -142,7 +142,7 @@ h1>span {
     bottom: 20px;
     left: 50%;
     transform: translate(-50%, -50%);
-    
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -251,11 +251,12 @@ h2 {
 }
 
 .detail-container {
-    width: 900px;
-    height: 380px;
+    width: 100%;
+    height: fit-content;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 100px;
 }
 
 h3 {
@@ -266,12 +267,11 @@ h3 {
 
 .about-me-container {
     height: 100%;
-    /* width: 500px; */
     padding: 30px 0;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 30px;
 }
 
 .about-me-tg {
@@ -280,12 +280,12 @@ h3 {
     gap: 10px;
 }
 
-.about-me-tg>li {
+.about-me-tg > li {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     color: var(--main-text-color);
     font-size: 22px;
-    gap: 10px;
 }
 
 .about-me-tg p:last-child {
@@ -748,7 +748,7 @@ h3 {
     line-height: 120px;
 }
 
-.contact-information > ul {
+.contact-information>ul {
     width: 750px;
     padding-top: 10px;
     display: flex;
@@ -769,7 +769,7 @@ h3 {
     border-radius: 10px;
 }
 
-.contact-information li > p {
+.contact-information li>p {
     padding: 10px;
     font-family: "Crimson Pro";
     font-weight: 500;
