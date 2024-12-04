@@ -13,7 +13,7 @@ body {
     font-weight: 400;
     font-style: normal;
     /* <weight>: Use a value from 200 to 900 */
-    
+
     font-family: "Noto Sans KR";
     font-optical-sizing: auto;
     font-weight: 400;
@@ -30,12 +30,13 @@ a {
     text-decoration: none;
 }
 
-body > section {
+body>section {
     padding: 0 32px;
     background-color: var(--background-color);
 }
 
 #starCanvas {
+    width: 100%;
     display: block;
     position: absolute;
 }
@@ -45,19 +46,23 @@ body > section {
     height: 100vh;
 
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+    overflow: hidden;
 }
 
 .branding-tg {
+    width: 100%;
     padding-left: 10%;
     position: relative;
 }
 
-.branding-tg::before {
+.branding-tg::after {
     content: '';
-    border-color: var(--main-text-color);
+    background-color: var(--accent-color);
     width: 650px;
-    height: 2px;
+    height: 1px;
     position: absolute;
     top: 72%;
     z-index: 1;
@@ -70,39 +75,85 @@ h1 {
     font-weight: 800;
 }
 
-h1 > span {
+h1>span {
     color: var(--accent-color);
 }
 
-.branding-tg > p {
+.branding-tg>p {
     color: var(--accent-color);
     font-size: 22px;
     font-weight: 600px;
     line-height: 36px;
 }
 
-.branding-tg > p > span {
+.branding-tg>p>span {
     color: var(--main-text-color);
     font-size: 24px;
     font-weight: 500;
 }
 
-.scroll-down > p {
-    color: var(--main-text-color);
-    font-weight: 300;
-    font-size: 16px;
+.moving-text {
+    position: relative;
+    display: flex;
+    white-space: nowrap;
+    /* 텍스트 줄바꿈 방지 */
+    /* overflow: hidden; */
+}
+
+.moving-text span {
+    display: inline-block;
+    font-size: 130px;
+    font-weight: 600;
+    color: #131313;
+}
+
+.moving-left span {
+    animation: moveLeft 20s linear infinite;
+}
+
+@keyframes moveLeft {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+        /* 한 텍스트 길이만큼 왼쪽으로 이동 */
+    }
+}
+
+.moving-right span {
+    animation: moveRight 20s linear infinite;
+}
+
+@keyframes moveRight {
+    from {
+        transform: translateX(-70%);
+        /* 시작 위치 */
+    }
+    to {
+        transform: translateX(0);
+        /* 한 텍스트 길이만큼 오른쪽으로 이동 */
+    }
 }
 
 .scroll-down {
     position: absolute;
     bottom: 20px;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    z-index: 1;
+}
+
+.scroll-down>p {
+    color: var(--main-text-color);
+    font-weight: 300;
+    font-size: 16px;
 }
 
 .mouse {
@@ -132,19 +183,19 @@ h1 > span {
         opacity: 0;
         transform: scale(0);
     }
-    
+
     33% {
         top: 0;
         opacity: 1;
         transform: scale(1);
-        
+
     }
 
     66% {
         top: 10px;
         opacity: 1;
     }
-    
+
     100% {
         top: 10px;
         opacity: 0;
@@ -153,14 +204,16 @@ h1 > span {
 
 @keyframes wheel-animation {
     33% {
-        top :25%;
+        top: 25%;
     }
+
     66% {
         top: 75%;
     }
+
     100% {
         top: 75%;
-    } 
+    }
 }
 
 .profile-page {
@@ -184,7 +237,7 @@ h2 {
     color: var(--main-text-color);
 }
 
-.h2-container > h2::first-letter {
+.h2-container>h2::first-letter {
     color: var(--accent-color);
 }
 
@@ -193,7 +246,7 @@ h2 {
     height: 350px;
 }
 
-.profile-img > img {
+.profile-img>img {
     border-radius: 20px;
 }
 
@@ -211,7 +264,7 @@ h3 {
     font-weight: 700;
 }
 
-.about-me-container{
+.about-me-container {
     height: 100%;
     /* width: 500px; */
     padding: 30px 0;
@@ -227,7 +280,7 @@ h3 {
     gap: 10px;
 }
 
-.about-me-tg > li {
+.about-me-tg>li {
     display: flex;
     justify-content: space-between;
     color: var(--main-text-color);
@@ -270,7 +323,7 @@ h3 {
 } */
 /* before, after가 반응형때 중구난방이라 박스로 하나 감싸주어 기준점을 통일시킴 */
 
-.work-experience > li {
+.work-experience>li {
     position: relative;
 }
 
@@ -308,7 +361,7 @@ h3 {
     font-weight: 300;
 }
 
-.company-name > span {
+.company-name>span {
     color: var(--main-text-color);
 }
 
@@ -320,14 +373,14 @@ h3 {
     gap: 30px;
 }
 
-.line-short > .date,
-.line-short > .company {
+.line-short>.date,
+.line-short>.company {
     position: relative;
     left: 37%;
 }
 
-.line-long > .date,
-.line-long > .company {
+.line-long>.date,
+.line-long>.company {
     position: relative;
     left: 57%
 }
@@ -390,7 +443,7 @@ h3 {
     position: relative;
 }
 
-.self-introduction::before{
+.self-introduction::before {
     content: 'Self-Introduction';
     font-size: 80px;
     font-family: "Crimson Pro";
@@ -412,7 +465,7 @@ h3 {
     top: 30%;
 }
 
-.self-introduction > li {
+.self-introduction>li {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -420,11 +473,11 @@ h3 {
     color: var(--main-text-color);
 }
 
-.self-introduction > li > p{
+.self-introduction>li>p {
     font-size: 22px;
 }
 
-.self-introduction > li > span{
+.self-introduction>li>span {
     font-size: 20px;
     color: var(--accent-color);
     font-weight: 300;
@@ -437,13 +490,13 @@ h3 {
     position: relative;
 }
 
-.character > ul {
+.character>ul {
     width: 100%;
     height: 100%;
     position: relative;
 }
 
-.character::after{
+.character::after {
     content: 'Character';
     font-size: 80px;
     font-family: "Crimson Pro";
@@ -542,13 +595,13 @@ h3 {
     color: #FF6600;
 }
 
-.project-tg > p {
+.project-tg>p {
     font-size: 24px;
     font-weight: 600;
     color: var(--main-text-color);
 }
 
-.project-tg > .explain {
+.project-tg>.explain {
     font-size: 18px;
     font-weight: 400;
     color: var(--accent-color);
@@ -556,26 +609,26 @@ h3 {
     line-height: 22px;
 }
 
-.project-tg > ul {
+.project-tg>ul {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.project-tg > ul > li {
+.project-tg>ul>li {
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
 
-.project-tg > ul p {
+.project-tg>ul p {
     color: var(--main-text-color);
     font-size: 16px;
     font-weight: 300;
 }
 
-.project-tg > ul .category {
+.project-tg>ul .category {
     font-size: 20px;
     font-weight: 600;
 }
@@ -583,7 +636,7 @@ h3 {
 .view-button {
     width: 100%;
     height: 50px;
-    background-color:#FF6600;
+    background-color: #FF6600;
     border-radius: 5px;
 
     display: flex;
@@ -591,7 +644,7 @@ h3 {
     justify-content: center;
 }
 
-.view-button > a {
+.view-button>a {
     width: 100%;
     height: 100%;
     display: flex;
@@ -620,8 +673,7 @@ h3 {
 }
 
 
-.imac-inner:hover
-.imac-inner-img {
+.imac-inner:hover .imac-inner-img {
     transition: 5s;
     transform: translateY(calc(-100% + 235px));
 }
@@ -639,7 +691,7 @@ h3 {
     align-items: start;
 }
 
-.furniture-tg > .explain {
+.furniture-tg>.explain {
     text-align: left;
 }
 
@@ -673,7 +725,7 @@ h3 {
     justify-content: space-between;
 }
 
-.contact-tg > p {
+.contact-tg>p {
     color: var(--accent-color);
     text-align: center;
     font-size: 24px;
@@ -681,13 +733,13 @@ h3 {
     line-height: 40px;
 }
 
-.contact-tg > p:last-child {
+.contact-tg>p:last-child {
     font-size: 20px;
     font-weight: 500;
     color: var(--main-text-color);
 }
 
-.contact-information > p{
+.contact-information>p {
     font-family: "Crimson Pro";
     font-weight: 500;
     font-size: 100px;
@@ -701,13 +753,13 @@ h3 {
     padding-top: 10px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
 
 }
 
 .contact-information li {
-    width: 350px;
-    height: 120px;
+    width: 300px;
+    height: 100px;
     padding: 20px;
     box-sizing: border-box;
     display: flex;
@@ -721,9 +773,9 @@ h3 {
     padding: 10px;
     font-family: "Crimson Pro";
     font-weight: 500;
-    font-size: 100px;
+    font-size: 80px;
     font-style: italic;
-    color: var(--main-text-color);
+    color: var(--accent-color);
 }
 
 .contact-way {
@@ -734,10 +786,11 @@ h3 {
 
 .contact-way p {
     color: var(--main-text-color);
-    font-size: 24px;
+    font-size: 20px;
+    font-weight: 500;
 }
 
 .contact-way p:last-child {
-    color: var(--accent-color);
-    font-size: 18px;
+    font-weight: 200;
+    font-size: 16px;
 }
