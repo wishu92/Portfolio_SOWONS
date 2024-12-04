@@ -325,6 +325,14 @@ h3 {
 } */
 /* before, after가 반응형때 중구난방이라 박스로 하나 감싸주어 기준점을 통일시킴 */
 
+.work-experience {
+    width: 100%;
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
 .work-experience>li {
     position: relative;
 }
@@ -339,6 +347,7 @@ h3 {
     width: 300px;
     position: absolute;
     top: 50%;
+    left: 0%;
 }
 
 .line-vertical::before {
@@ -365,14 +374,6 @@ h3 {
 
 .company-name>span {
     color: var(--main-text-color);
-}
-
-.work-experience {
-    width: 1200px;
-    padding: 30px 0;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
 }
 
 .line-short>.date,

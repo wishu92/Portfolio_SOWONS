@@ -1,5 +1,16 @@
 @media screen and (max-width:1200px) {
+    .line-long::before {
+        width: 200px;
+    }
 
+    .line-long>.date,
+    .line-long>.company {
+        left: 53%;
+    }
+
+    .line-vertical::after {
+        font-size: 60px;
+    }
 }
 
 @media screen and (max-width:1024px) {
@@ -32,7 +43,7 @@
         width: 100%;
     }
 
-    .about-me-tg > li {
+    .about-me-tg>li {
         font-size: 20px;
     }
 
@@ -43,6 +54,67 @@
     .about-me-explain {
         font-size: 18px;
         line-height: 24px;
+    }
+
+    .line-vertical::before,
+    .line-short::after,
+    .line-short::before,
+    .line-long::after,
+    .line-long::before {
+        left: 27%;
+    }
+
+    .line-long>.date,
+    .line-long>.company {
+        left: 58%;
+    }
+
+    .date {
+        font-size: 22px;
+    }
+
+    .company-name {
+        font-size: 16px;
+    }
+
+    .tabs {
+        gap: 80px;
+    }
+
+    .tabs button {
+        font-size: 20px;
+    }
+
+    .self-introduction::before{
+        font-size: 60px;
+        top: 5%;
+    }
+
+    .self-introduction::after {
+        width: 1000px;
+    }
+
+    .self-introduction>li>p {
+        font-size: 20px;
+    }
+
+    .self-introduction>li>span {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width:830px) {
+    .self-introduction::before{
+        font-size: 50px;
+        top: 8%;
+    }
+
+    .self-introduction>li>p {
+        font-size: 18px;
+    }
+
+    .self-introduction>li>span {
+        font-size: 16px;
     }
 }
 
@@ -100,10 +172,10 @@
 }
 
 @media screen and (max-width:768px) {
-    body > section {
+    body>section {
         padding: 0 16px;
     }
-    
+
     .branding-tg {
         padding-left: 5%;
     }
@@ -158,7 +230,7 @@
         gap: 20px;
     }
 
-    .about-me-tg > li {
+    .about-me-tg>li {
         font-size: 18px;
     }
 
@@ -170,8 +242,82 @@
         font-size: 18px;
         line-height: 24px;
     }
+
+    .line-vertical::before,
+    .line-short::after,
+    .line-short::before,
+    .line-long::after,
+    .line-long::before {
+        left: 10%;
+    }
+
+    .line-long>.date,
+    .line-long>.company {
+        left: 40%;
+    }
+
+    .line-short>.date,
+    .line-short>.company {
+        left: 25%;
+    }
+
+    .line-long::before {
+        width: 150px;
+    }
+
+    .line-vertical::after {
+        display: none;
+    }
+
+    .date {
+        font-size: 20px;
+    }
+
+    .company-name {
+        font-size: 16px;
+    }
+
+    .tabs {
+        gap: 50px;
+    }
+
+    .tabs button {
+        font-size: 18px;
+    }
+
+    .self-introduction::before{
+        top: 10%;
+    }
+
+    .responsive-br-introduction{
+        display: none;
+    }
+
+
 }
 
+@media screen and (max-width: 600px) {
+    .line-long::before {
+        width: 60px;
+    }
+
+    .line-long>.date,
+    .line-long>.company {
+        left: 25%;
+    }
+
+    .tabs {
+        gap: 20px;
+    }
+
+    .tabs button {
+        font-size: 16px;
+    }
+
+    .tabs button {
+        padding: 5px;
+    }
+}
 
 @media screen and (max-width: 480px) {
     .branding-tg {
@@ -198,6 +344,38 @@
         font-size: 16px;
         line-height: 20px;
     }
+
+    .line-long::before,
+    .line-short::before {
+        max-width: 45px;
+    }
+
+    .tabs {
+        gap: 10px;
+    }
+
+    .self-introduction::before{
+        display: none;
+    }
+
+    .self-introduction::after {
+        display: none;
+    }
+
+    .self-introduction {
+        padding-top: 0px;
+    }
 }
 
-@media screen and (max-width:360px) {}
+@media screen and (max-width:360px) {
+
+    .line-long::before,
+    .line-short::before {
+        max-width: 30px;
+    }
+
+    .tabs {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

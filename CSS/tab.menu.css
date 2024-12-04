@@ -1,9 +1,14 @@
 .tabs {
     height: 50px;
-    width: 800px;
-    justify-content: space-between;
+    width: 100%;
+    gap: 100px;
+    justify-content: center;
     display: flex;
     align-items: center;
+}
+
+.tab-contents {
+    width: 100%;
 }
 
 .tabs button {
