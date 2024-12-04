@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100x100 Progress Bars</title>
+    <style>
+        .progress-container {
+            width: 100%;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .progress-bar {
+            position: relative;
+            width: 200px; /* 너비와 높이를 100px로 */
+            height: 200px;
+            text-align: center;
+            background: var(--background-color);
+            border-radius: 50%;
+        }
+
+        .progress-bar svg {
+            transform: rotate(-90deg);
+            width: 100%;
+            height: 100%;
+            overflow: visible;
+        }
+
+        .progress-bar circle {
+            fill: none;
+            stroke-width: 10;
+        }
+
+        .progress-bar circle:nth-child(1) {
+            stroke: #171717;
+        }
+
+        .progress-bar circle:nth-child(2) {
+            stroke-dasharray: 314.16; /* 둘레: 2 * Math.PI * 50 */
+            stroke-dashoffset: 314.16; /* 초기값 */
+            transition: stroke-dashoffset 1s ease-out;
+        }
+
+        .text_zone {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .percentage {
+            font-size: 14px;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        .label {
+            font-size: 16px;
+            font-weight: bold;
+            color: beige;
+        }
+
+        /* 색상 설정 */
+        .html-color {
+            color: #E44D26;
+        }
+
+        .progress-bar.html circle:nth-child(2) {
+            stroke: #E44D26;
+        }
+
+        .css-color {
+            color: #5EBBFF;
+        }
+
+        .progress-bar.css circle:nth-child(2) {
+            stroke: #5EBBFF;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="progress-container">
+        <div class="progress-bar html" data-percentage="80">
+            <svg width="100" height="100"> <!-- 크기 100x100 -->
+                <circle cx="100" cy="100" r="100"></circle> <!-- 중심과 반지름 -->
+                <circle cx="100" cy="100" r="100"></circle>
+            </svg>
+            <div class="text_zone">
+                <div class="label html-color">HTML</div>
+                <div class="percentage">0%</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const progressBars = document.querySelectorAll('.progress-bar');
+
+            const startProgress = (bar) => {
+                const percentage = bar.getAttribute('data-percentage');
+                const circle = bar.querySelector('circle:nth-child(2)');
+                const percentageLabel = bar.querySelector('.percentage');
+
+                const radius = 50; // 반지름 고정
+                const circumference = 2 * Math.PI * radius; // 둘레 계산
+
+                circle.style.strokeDasharray = circumference;
+                circle.style.strokeDashoffset = circumference;
+
+                let currentPercentage = 0;
+
+                const updateProgress = setInterval(() => {
+                    if (currentPercentage >= percentage) {
+                        clearInterval(updateProgress);
+                    } else {
+                        currentPercentage++;
+                        const offset = circumference - (circumference * currentPercentage) / 100;
+                        circle.style.strokeDashoffset = offset;
+                        percentageLabel.textContent = `${currentPercentage}%`;
+                    }
+                }, 20);
+            };
+
+            progressBars.forEach(startProgress);
+        });
+    </script>
+</body>
+
+</html>
