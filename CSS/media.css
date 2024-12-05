@@ -11,6 +11,36 @@
     .line-vertical::after {
         font-size: 60px;
     }
+
+    .pentagon {
+        width: 200px;
+        height: 200px;
+    }
+
+    .character2 {
+        top: 30%;
+        left: 20%;
+    }
+
+    .character5 {
+        top: 31%;
+        right: 21%;
+    }
+
+    .character3 {
+        bottom: 32%;
+        left: 32%;
+    }
+
+    .character4 {
+        bottom: 32%;
+        right: 29%;
+    }
+
+    .project {
+        width: 100%;
+        gap: 4;
+    }
 }
 
 @media screen and (max-width:1024px) {
@@ -85,7 +115,7 @@
         font-size: 20px;
     }
 
-    .self-introduction::before{
+    .self-introduction::before {
         font-size: 60px;
         top: 5%;
     }
@@ -101,21 +131,88 @@
     .self-introduction>li>span {
         font-size: 18px;
     }
-}
 
-@media screen and (max-width:830px) {
-    .self-introduction::before{
-        font-size: 50px;
-        top: 8%;
+    .character::after {
+        font: 60px;
     }
 
-    .self-introduction>li>p {
+    .character li {
+        font-size: 20px;
+    }
+
+
+
+
+
+
+    .project-tg {
+        gap: 20px;
+    }
+
+    .project-name {
+        font-size: 70px;
+    }
+
+    .project-tg>p {
+        font-size: 22px;
+    }
+
+    .project-tg>.explain {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .project-tg>ul .category {
         font-size: 18px;
     }
 
-    .self-introduction>li>span {
-        font-size: 16px;
+    .view-button {
+        height: 40px;
     }
+
+    .view-button>a {
+        font-size: 18px;
+    }
+
+    .imac {
+        width: 400px;
+        height: 345px;
+    }
+
+    .imac-inner {
+        width: 380px;
+        height: 205px;
+    }
+
+    .furniture-color {
+        line-height: 50px;
+        /* br넣기 */
+    }
+
+    .furniture::before {
+        content: 'Responsive \A Website';
+        width: 300px;
+        color: var(--shadow-color);
+        font-family: "Crimson Pro";
+        font-weight: 600;
+        font-size: 120px;
+        line-height: 130px;
+        font-style: italic;
+        position: absolute;
+        left: 2%;
+        bottom: 6%;
+
+    }
+
+
+
+
+
+
+
+
+
+
 }
 
 @media screen and (max-width:900px) {
@@ -168,6 +265,34 @@
     .about-me-explain {
         font-size: 18px;
         line-height: 22px;
+    }
+
+    .character::after {
+        /* font: 60px; */
+        left: 0;
+    }
+
+    .character2 {
+        left: 15%;
+    }
+
+    .character5 {
+        right: 15%;
+    }
+}
+
+@media screen and (max-width:830px) {
+    .self-introduction::before {
+        font-size: 50px;
+        top: 8%;
+    }
+
+    .self-introduction>li>p {
+        font-size: 18px;
+    }
+
+    .self-introduction>li>span {
+        font-size: 16px;
     }
 }
 
@@ -285,15 +410,72 @@
         font-size: 18px;
     }
 
-    .self-introduction::before{
+    .self-introduction::before {
         top: 10%;
     }
 
-    .responsive-br-introduction{
+    .responsive-br-introduction {
         display: none;
     }
 
+    .character::after {
+        display: none;
+    }
 
+    .pentagon {
+        width: 150px;
+        height: 150px;
+    }
+
+    .character li {
+        font-size: 18px;
+    }
+
+    .character1 {
+        left: 43%;
+    }
+
+    .character2 {
+        left: 16%;
+    }
+
+    .character5 {
+        top: 30%;
+        right: 17%;
+    }
+
+    .character3 {
+        bottom: 42%;
+        left: 28%;
+    }
+
+    .character4 {
+        bottom: 42%;
+        right: 25%;
+    }
+
+}
+
+@media screen and (max-width: 650px) {
+    .character1 {
+        left: 41%;
+    }
+
+    .character2 {
+        left: 5%;
+    }
+
+    .character5 {
+        right: 10%;
+    }
+
+    .character3 {
+        left: 20%;
+    }
+
+    .character4 {
+        right: 15%;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -318,6 +500,36 @@
         padding: 5px;
     }
 }
+
+@media screen and (max-width: 550px) {
+    .pentagon {
+        width: 120px;
+        height: 120px;
+    }
+
+    .character1 {
+        top: 4%;
+    }
+
+    .character3,
+    .character4 {
+        bottom: 27%;
+    }
+
+    .character5,
+    .character2 {
+        top: 30%;
+    }
+
+    .character li {
+        font-size: 16px;
+    }
+
+    .character {
+        height: 300px;
+    }
+}
+
 
 @media screen and (max-width: 480px) {
     .branding-tg {
@@ -354,7 +566,7 @@
         gap: 10px;
     }
 
-    .self-introduction::before{
+    .self-introduction::before {
         display: none;
     }
 
@@ -364,6 +576,53 @@
 
     .self-introduction {
         padding-top: 0px;
+    }
+
+    .resume-page {
+        padding: 80px 0;
+        height: 450px;
+        gap: 50px;
+    }
+}
+
+@media screen and (max-width:420px) {
+    .pentagon {
+        width: 100px;
+        height: 100px;
+    }
+
+    .character1 {
+        left: 38%;
+    }
+
+    .character5 {
+        right: 0;
+    }
+
+    .character2 {
+        left: 0;
+    }
+
+    .character3 {
+        left: 10%;
+    }
+
+    .character4 {
+        right: 6%;
+    }
+
+    .character3,
+    .character4 {
+        bottom: 34%;
+    }
+
+    .character5,
+    .character2 {
+        top: 29%;
+    }
+
+    .character li {
+        font-size: 16px;
     }
 }
 
@@ -377,5 +636,6 @@
     .tabs {
         flex-direction: column;
         gap: 10px;
+        padding: 40px 0;
     }
 }

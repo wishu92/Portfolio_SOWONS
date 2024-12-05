@@ -282,7 +282,7 @@ h3 {
     gap: 10px;
 }
 
-.about-me-tg > li {
+.about-me-tg>li {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -547,8 +547,8 @@ h3 {
 }
 
 .character5 {
-    top: 37%;
-    right: 18%;
+    top: 36%;
+    right: 25%;
 }
 
 .portfolio-page {
@@ -562,7 +562,7 @@ h3 {
 }
 
 .project {
-    width: 1200px;
+    width: 1000px;
     display: flex;
     gap: 50px;
 }
@@ -582,12 +582,10 @@ h3 {
 }
 
 .project-tg {
-    width: 350px;
-    /* height: 450px; */
+    width: fit-content;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    /* justify-content: space-between; */
     gap: 30px;
 }
 
