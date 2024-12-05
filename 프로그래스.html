@@ -4,130 +4,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>100x100 Progress Bars</title>
+    <title>Donut Progress Bar</title>
     <style>
-        .progress-container {
-            width: 100%;
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+    }
 
-        .progress-bar {
-            position: relative;
-            width: 200px; /* 너비와 높이를 100px로 */
-            height: 200px;
-            text-align: center;
-            background: var(--background-color);
-            border-radius: 50%;
-        }
+    .progress-container {
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
-        .progress-bar svg {
-            transform: rotate(-90deg);
-            width: 100%;
-            height: 100%;
-            overflow: visible;
-        }
+    .progress-bar {
+        position: relative;
+        width: 25vw; /* 반응형 크기 */
+        height: 25vw; /* 반응형 크기 */
+        max-width: 200px; /* 최대 크기 제한 */
+        max-height: 200px; /* 최대 크기 제한 */
+        text-align: center;
+        background: #ffffff;
+        border-radius: 50%;
+        padding: 20px;
+        overflow: hidden;
+    }
 
-        .progress-bar circle {
-            fill: none;
-            stroke-width: 10;
-        }
+    .progress-bar svg {
+        width: 100%;
+        height: 100%;
+    }
 
-        .progress-bar circle:nth-child(1) {
-            stroke: #171717;
-        }
+    .progress-bar circle {
+        fill: none;
+        stroke-width: 10;
+    }
 
-        .progress-bar circle:nth-child(2) {
-            stroke-dasharray: 314.16; /* 둘레: 2 * Math.PI * 50 */
-            stroke-dashoffset: 314.16; /* 초기값 */
-            transition: stroke-dashoffset 1s ease-out;
-        }
+    .progress-bar circle:nth-child(1) {
+        stroke: #f0f0f0;
+    }
 
-        .text_zone {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
+    .progress-bar circle:nth-child(2) {
+        stroke-dasharray: 628.3;
+        /* 둘레 (r=100인 원의 둘레는 약 628.3) */
+        stroke-dashoffset: 628.3;
+        transform-origin: center;
+        transform: rotate(-90deg); /* 12시 방향으로 변경 */
+        transition: stroke-dashoffset 1s ease-out;
+    }
 
-        .percentage {
-            font-size: 14px;
-            font-weight: bold;
-            color: var(--accent-color);
-        }
+    .text_zone {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: calc(6px + 3vw); /* 반응형 크기 */
+        text-align: center;
+    }
 
-        .label {
-            font-size: 16px;
-            font-weight: bold;
-            color: beige;
-        }
+    .percentage {
+        font-weight: bold;
+        color: #333;
+    }
 
-        /* 색상 설정 */
-        .html-color {
-            color: #E44D26;
-        }
+    .label {
+        margin-top: 5px;
+        font-size: 0.6em; /* 상대 크기 */
+        color: #555;
+    }
 
-        .progress-bar.html circle:nth-child(2) {
-            stroke: #E44D26;
-        }
+    .progress-bar.html circle:nth-child(2) {
+        stroke: #ff5733;
+    }
 
-        .css-color {
-            color: #5EBBFF;
-        }
+    .progress-bar.css circle:nth-child(2) {
+        stroke: #8cdeff;
+    }
 
-        .progress-bar.css circle:nth-child(2) {
-            stroke: #5EBBFF;
-        }
+    .progress-bar.javascript circle:nth-child(2) {
+        stroke: #ffeb33;
+    }
+
+    .progress-bar.figma circle:nth-child(2) {
+        stroke: #f8a7ff;
+    }
+
+    .progress-bar.photoshop circle:nth-child(2) {
+        stroke: #4290d6;
+    }
+</style>
+
     </style>
 </head>
 
 <body>
     <div class="progress-container">
         <div class="progress-bar html" data-percentage="80">
-            <svg width="100" height="100"> <!-- 크기 100x100 -->
-                <circle cx="100" cy="100" r="100"></circle> <!-- 중심과 반지름 -->
-                <circle cx="100" cy="100" r="100"></circle>
+            <svg>
+                <circle cx="50%" cy="50%" r="45%"></circle>
+                <circle cx="50%" cy="50%" r="45%"></circle>
             </svg>
             <div class="text_zone">
-                <div class="label html-color">HTML</div>
+                <div class="label">HTML</div>
+                <div class="percentage">0%</div>
+            </div>
+        </div>
+        <div class="progress-bar css" data-percentage="70">
+            <svg>
+                <circle cx="50%" cy="50%" r="45%"></circle>
+                <circle cx="50%" cy="50%" r="45%"></circle>
+            </svg>
+            <div class="text_zone">
+                <div class="label">CSS</div>
+                <div class="percentage">0%</div>
+            </div>
+        </div>
+        <div class="progress-bar javascript" data-percentage="60">
+            <svg>
+                <circle cx="50%" cy="50%" r="45%"></circle>
+                <circle cx="50%" cy="50%" r="45%"></circle>
+            </svg>
+            <div class="text_zone">
+                <div class="label">JavaScript</div>
+                <div class="percentage">0%</div>
+            </div>
+        </div>
+        <div class="progress-bar figma" data-percentage="80">
+            <svg>
+                <circle cx="50%" cy="50%" r="45%"></circle>
+                <circle cx="50%" cy="50%" r="45%"></circle>
+            </svg>
+            <div class="text_zone">
+                <div class="label">Figma</div>
+                <div class="percentage">0%</div>
+            </div>
+        </div>
+        <div class="progress-bar photoshop" data-percentage="70">
+            <svg>
+                <circle cx="50%" cy="50%" r="45%"></circle>
+                <circle cx="50%" cy="50%" r="45%"></circle>
+            </svg>
+            <div class="text_zone">
+                <div class="label">Photoshop</div>
                 <div class="percentage">0%</div>
             </div>
         </div>
     </div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const progressBars = document.querySelectorAll('.progress-bar');
+document.addEventListener("DOMContentLoaded", () => {
+    const progressBars = document.querySelectorAll('.progress-bar');
 
-            const startProgress = (bar) => {
-                const percentage = bar.getAttribute('data-percentage');
-                const circle = bar.querySelector('circle:nth-child(2)');
-                const percentageLabel = bar.querySelector('.percentage');
+    progressBars.forEach(bar => {
+        const percentage = bar.getAttribute('data-percentage'); // 퍼센티지 가져오기
+        const circle = bar.querySelector('circle:nth-child(2)'); // 진행 원 가져오기
+        const percentageLabel = bar.querySelector('.percentage'); // 퍼센티지 텍스트
 
-                const radius = 50; // 반지름 고정
-                const circumference = 2 * Math.PI * radius; // 둘레 계산
+        const radius = circle.r.baseVal.value; // 반지름 가져오기
+        const circumference = 2 * Math.PI * radius; // 원 둘레 계산
 
-                circle.style.strokeDasharray = circumference;
-                circle.style.strokeDashoffset = circumference;
+        circle.style.strokeDasharray = circumference; // 둘레 설정
+        circle.style.strokeDashoffset = circumference; // 초기 상태 설정
+        percentageLabel.textContent = `0%`; // 초기 텍스트 0% 설정
 
-                let currentPercentage = 0;
+        let currentPercentage = 0; // 초기 퍼센티지 설정
 
-                const updateProgress = setInterval(() => {
-                    if (currentPercentage >= percentage) {
-                        clearInterval(updateProgress);
-                    } else {
-                        currentPercentage++;
-                        const offset = circumference - (circumference * currentPercentage) / 100;
-                        circle.style.strokeDashoffset = offset;
-                        percentageLabel.textContent = `${currentPercentage}%`;
-                    }
-                }, 20);
-            };
+        const updateProgress = setInterval(() => {
+            if (currentPercentage >= percentage) {
+                clearInterval(updateProgress); // 목표 퍼센티지에 도달하면 중지
+            } else {
+                currentPercentage++;
+                const offset = circumference - (circumference * currentPercentage) / 100;
+                circle.style.strokeDashoffset = offset; // 애니메이션
+                percentageLabel.textContent = `${currentPercentage}%`; // 텍스트 업데이트
+            }
+        }, 20); // 속도 조절
+    });
+});
 
-            progressBars.forEach(startProgress);
-        });
+
     </script>
 </body>
 

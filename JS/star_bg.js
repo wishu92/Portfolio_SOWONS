@@ -1,7 +1,16 @@
 const canvas = document.getElementById('starCanvas');
 const ctx = canvas.getContext('2d');
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+
+// Resize canvas to fit window size
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    // Reinitialize stars after resizing
+    init();
+}
+
+window.addEventListener('resize', resizeCanvas);
 
 class Star {
     constructor(x, y, radius, color) {
@@ -51,6 +60,7 @@ let stars;
 function init() {
     stars = [];
 
+    // Create stars based on new canvas size
     for (let i = 0; i < 200; i++) {
         stars.push(spawnStars());
     }
@@ -65,5 +75,6 @@ function animate() {
     });
 }
 
-init();
-animate();
+// Initialize and animate
+resizeCanvas(); // Resize the canvas initially and generate stars
+animate(); // Start the animation loop

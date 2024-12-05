@@ -409,7 +409,7 @@ h3 {
     background-color: var(--main-text-color);
     position: absolute;
     left: 30%;
-    top: 50%;
+    top: 52%;
 }
 
 .line-long::after {
@@ -433,7 +433,7 @@ h3 {
     background-color: var(--main-text-color);
     position: absolute;
     left: 30%;
-    top: 50%;
+    top: 52%;
 }
 
 .self-introduction {
@@ -551,6 +551,10 @@ h3 {
     right: 25%;
 }
 
+.portfolio-page-container {
+    overflow: hidden;
+}
+
 .portfolio-page {
     width: 100%;
     padding: 100px 0;
@@ -578,7 +582,7 @@ h3 {
     font-style: italic;
     position: absolute;
     top: 15%;
-    left: 55%;
+    left: 63%;
 }
 
 .project-tg {
@@ -710,20 +714,23 @@ h3 {
     line-height: 130px;
     font-style: italic;
     position: absolute;
-    left: 2%;
-    bottom: 6%;
-    /* z-index: -1; */
+    left: 10%;
+    bottom: 2%;
+}
+
+.contact-page-container {
+    overflow: hidden;
 }
 
 .contact-page {
     width: 100%;
     padding: 100px 0;
     box-sizing: border-box;
-    height: 100vh;
+    height: 850px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    gap: 100px;
 }
 
 .contact-tg>p {
@@ -754,8 +761,8 @@ h3 {
     padding-top: 10px;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-
+    justify-content: center;
+    gap: 50px;
 }
 
 .contact-information li {
