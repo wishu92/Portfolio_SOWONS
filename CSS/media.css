@@ -371,15 +371,16 @@
 
     .branding-tg {
         padding-left: 5%;
+        gap: 20px;
     }
 
     .branding-tg::after {
         width: 450px;
-        top: 67%;
+        top: 65%;
     }
 
     h1 {
-        font-size: 60px;
+        font-size: 72px;
     }
 
     .branding-tg>p {
@@ -627,6 +628,9 @@
 }
 
 @media screen and (max-width: 550px) {
+    h1 {
+        font-size: 65px;
+    }
     .pentagon {
         width: 120px;
         height: 120px;

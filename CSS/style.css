@@ -56,6 +56,10 @@ body>section {
     width: 100%;
     padding-left: 10%;
     position: relative;
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
 .branding-tg::after {
@@ -64,7 +68,7 @@ body>section {
     width: 600px;
     height: 1px;
     position: absolute;
-    top: 72%;
+    top: 70%;
 }
 
 h1 {
