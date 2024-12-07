@@ -1,4 +1,9 @@
 @media screen and (max-width:1200px) {
+
+    .work-experience {
+        width: 100%;
+    }
+
     .line-long::before {
         width: 200px;
     }
@@ -8,7 +13,7 @@
         left: 53%;
     }
 
-    .line-vertical::after {
+    .work-experience::after {
         font-size: 60px;
     }
 
@@ -376,7 +381,7 @@
 
     .branding-tg::after {
         width: 450px;
-        top: 65%;
+        top: 68%;
     }
 
     h1 {
@@ -459,7 +464,8 @@
         width: 150px;
     }
 
-    .line-vertical::after {
+    .work-experience::after {
+        /* bottom: 10%; */
         display: none;
     }
 
@@ -631,6 +637,11 @@
     h1 {
         font-size: 65px;
     }
+
+    .branding-tg::after {
+        top: 65%;
+    }
+
     .pentagon {
         width: 120px;
         height: 120px;
@@ -666,7 +677,8 @@
     }
 
     .branding-tg::after {
-        display: none;
+        width: 400px;
+        top: 60%;
     }
 
     h1 {
@@ -702,6 +714,12 @@
     }
 }
 
+@media screen and (max-width:465px) {
+    .branding-tg::after {
+        width: 350px;
+        top: 52%;
+    }
+}
 @media screen and (max-width:420px) {
     .pentagon {
         width: 100px;

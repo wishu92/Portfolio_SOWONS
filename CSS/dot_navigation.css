@@ -50,13 +50,3 @@
     background-color: var(--main-text-color);
     color: var(--accent-color);
 }
-
-/* .dot-navigation > div {
-    display: flex;
-    flex-direction: row-reverse;
-    gap: 10px;
-}
-
-.dot-navigation p{
-    color: var(--main-text-color);
-} */
