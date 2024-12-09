@@ -17,6 +17,10 @@
         font-size: 60px;
     }
 
+    .character>ul {
+        width: 100%;
+    }
+
     .pentagon {
         width: 200px;
         height: 200px;
@@ -110,7 +114,7 @@
     }
 
     .date {
-        font-size: 22px;
+        font-size: 28px;
     }
 
     .company-name {
@@ -355,17 +359,13 @@
 }
 
 @media screen and (max-width:830px) {
+    .responsive-br-introduction {
+        display: block;
+    }
+
     .self-introduction::before {
         font-size: 50px;
         top: 8%;
-    }
-
-    .self-introduction>li>p {
-        font-size: 18px;
-    }
-
-    .self-introduction>li>span {
-        font-size: 16px;
     }
 }
 
@@ -470,7 +470,8 @@
     }
 
     .date {
-        font-size: 20px;
+        font-size: 26px;
+        line-height: 36px;
     }
 
     .company-name {
@@ -494,12 +495,9 @@
     }
 
     .self-introduction {
-        padding-top: 0px;
+        padding-top: 60px;
     }
 
-    .responsive-br-introduction {
-        display: none;
-    }
 
     .character::after {
         display: none;
@@ -642,6 +640,14 @@
         top: 65%;
     }
 
+    .responsive-br-500 {
+        display: block;
+    }
+
+    .line-vertical::before {
+        height: 500px;
+    }
+
     .pentagon {
         width: 120px;
         height: 120px;
@@ -712,6 +718,10 @@
         width: 400px;
         gap: 50px;
     }
+
+    .date {
+        font-size: 26px;
+    }
 }
 
 @media screen and (max-width:465px) {
@@ -719,8 +729,32 @@
         width: 350px;
         top: 52%;
     }
+
+
+    .self-introduction>li>p {
+        font-size: 18px;
+    }
+
+    .self-introduction>li>span {
+        font-size: 16px;
+    }
+
+    .imac {
+        width: 340px;
+        height: 290px;
+    }
+
+    .imac-inner {
+        width: 320px;
+        height: 170px;
+    }
 }
+
 @media screen and (max-width:420px) {
+
+    .responsive-br-introduction {
+        display: none;
+    }
     .pentagon {
         width: 100px;
         height: 100px;
@@ -763,16 +797,6 @@
 
     .project-name {
         font-size: 56px;
-    }
-
-    .imac {
-        width: 340px;
-        height: 290px;
-    }
-
-    .imac-inner {
-        width: 320px;
-        height: 170px;
     }
 
     .portfolio-page::before,
