@@ -263,8 +263,10 @@
         top: 70%;
     }
 
-    h1 {
+    h1,
+    .text {
         font-size: 80px;
+        height: 160px;
     }
 
     .branding-tg>p {
@@ -384,8 +386,10 @@
         top: 68%;
     }
 
-    h1 {
+    h1,
+    .text {
         font-size: 72px;
+        height: 150px;
     }
 
     .branding-tg>p {
@@ -632,8 +636,10 @@
 }
 
 @media screen and (max-width: 550px) {
-    h1 {
+    h1,
+    .text {
         font-size: 65px;
+        height: 130px;
     }
 
     .branding-tg::after {
@@ -687,8 +693,10 @@
         top: 60%;
     }
 
-    h1 {
+    h1,
+    .text {
         font-size: 50px;
+        height: 100px;
     }
 
     .moving-text span {

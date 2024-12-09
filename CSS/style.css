@@ -71,6 +71,42 @@ body>section {
     top: 70%;
 }
 
+
+.typing {
+    display: flex;
+    /* font-size: 100px; */
+}
+
+.text {
+    height: 180px;
+    font-size: 90px;
+    color: var(--main-text-color);
+    font-family: "Crimson Pro";
+    font-weight: 800;
+}
+
+.text::after {
+    content: '';
+    margin-left: .4rem;
+    border-right: 2px solid #777;
+    animation: cursor .9s infinite steps(2);
+}
+
+@keyframes cursor {
+    from {
+        border-right: 2px solid #222;
+    }
+
+    to {
+        border-right: 2px solid #777;
+    }
+}
+
+
+
+
+
+
 h1 {
     font-size: 100px;
     color: var(--main-text-color);
@@ -510,6 +546,7 @@ h3 {
 
 .character>ul {
     width: 1200px;
+    margin: 0 auto;
     height: 100%;
     position: relative;
 }
