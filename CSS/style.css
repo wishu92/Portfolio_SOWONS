@@ -71,10 +71,13 @@ body>section {
     top: 70%;
 }
 
+/* keyframe까지 타이핑버전 */
+
 
 .typing {
     display: flex;
-    /* font-size: 100px; */
+    white-space: nowrap;
+
 }
 
 .text {
@@ -101,7 +104,6 @@ body>section {
         border-right: 2px solid #777;
     }
 }
-
 
 
 
