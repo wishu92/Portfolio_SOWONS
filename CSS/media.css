@@ -233,13 +233,12 @@
         height: 90px;
     }
 
-    .contact-information>p {
+    .number {
         text-align: center;
         font-size: 80px;
     }
 
     .contact-information>ul {
-        padding-top: 0;
         gap: 40px;
     }
 
@@ -368,6 +367,12 @@
     .self-introduction::before {
         font-size: 50px;
         top: 8%;
+    }
+    .contact-information>p {
+        font-size: 80px;
+        font-style: italic;
+        color: var(--accent-color);
+        line-height: 80px;
     }
 }
 
@@ -561,7 +566,7 @@
         font-size: 16px;
     }
 
-    .contact-information>p {
+    .number {
         font-size: 65px;
         line-height: 100px;
     }
@@ -601,6 +606,12 @@
     .character4 {
         right: 15%;
     }
+
+    .contact-information>p {
+        font-size: 70px;
+        text-align: center;
+    }
+
 }
 
 @media screen and (max-width: 600px) {
@@ -630,7 +641,7 @@
         gap: 20px;
     }
 
-    .contact-information>p {
+    .number {
         font-size: 56px;
         line-height: 90px;
     }
@@ -814,7 +825,7 @@
         line-height: 70px;
     }
 
-    .contact-information>p {
+    .number {
         font-size: 48px;
         line-height: 90px;
     }
@@ -856,7 +867,7 @@
         height: 140px;
     }
 
-    .contact-information>p {
+    .number {
         font-size: 38px;
         line-height: 60px;
     }
