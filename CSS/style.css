@@ -76,16 +76,13 @@ body>section {
 
 .typing {
     display: flex;
+    flex-direction: column;
     white-space: nowrap;
-
-}
-
-.text {
-    height: 180px;
-    font-size: 90px;
     color: var(--main-text-color);
     font-family: "Crimson Pro";
+    font-size: 90px;
     font-weight: 800;
+    height: 180px;
 }
 
 .text::after {

@@ -261,9 +261,8 @@
         width: 500px;
         top: 70%;
     }
-
     h1,
-    .text {
+    .typing  {
         font-size: 80px;
         height: 160px;
     }
@@ -392,7 +391,7 @@
     }
 
     h1,
-    .text {
+    .typing {
         font-size: 72px;
         height: 150px;
     }
@@ -649,7 +648,7 @@
 
 @media screen and (max-width: 550px) {
     h1,
-    .text {
+    .typing {
         font-size: 65px;
         height: 130px;
     }
@@ -706,7 +705,7 @@
     }
 
     h1,
-    .text {
+    .typing {
         font-size: 50px;
         height: 100px;
     }

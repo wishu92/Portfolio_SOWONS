@@ -2,9 +2,12 @@ const $text = document.querySelector(".typing .text");
 
         // 글자 모음 - 개행문자(\n)로 줄바꿈
         const letters = [
-            "Welcome to my \n PORTFOLIO",
-            "SOWON'S \n PORTFOLIO",
-            "Enjoy my \n PORTFOLIO",
+            "Welcome to my ",
+            "SOWON'S ",
+            "Enjoy exploring",
+            // "Welcome to my \n PORTFOLIO",
+            // "SOWON'S \n PORTFOLIO",
+            // "Enjoy my \n PORTFOLIO",
         ];
 
         // 글자 입력 속도
