@@ -3,7 +3,7 @@ const $text = document.querySelector(".typing .text");
         // 글자 모음 - 개행문자(\n)로 줄바꿈
         const letters = [
             "Welcome to my ",
-            "SOWON'S ",
+            "Sowon's ",
             "Enjoy exploring",
             // "Welcome to my \n PORTFOLIO",
             // "SOWON'S \n PORTFOLIO",

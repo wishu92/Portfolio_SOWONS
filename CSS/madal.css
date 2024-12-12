@@ -1,0 +1,63 @@
+    /* 모달창 배경 */
+    #modalOverlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    /* 모달창 스타일 */
+    #modal {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        width: 95%;
+        /* 화면 너비의 95% */
+        max-width: 1000px;
+        /* 최대 1200px로 제한 */
+        height: 90%;
+        /* 화면 높이의 95% */
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    /* 스크롤 활성화 영역 */
+    #modalContent {
+        flex: 1;
+        /* 스크롤 가능한 영역 확장 */
+        overflow-y: auto;
+        /* 세로 스s크롤 활성화 */
+        margin-bottom: 10px;
+        /* 버튼과의 간격 */
+    }
+
+    /* 이미지 스타일 */
+    #modalContent img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* 이동 버튼 */
+    #modal button {
+        background-color: #007BFF;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        align-self: center;
+        /* 버튼 가운데 정렬 */
+    }
+
+    #modal button:hover {
+        background-color: #0056b3;
+    }

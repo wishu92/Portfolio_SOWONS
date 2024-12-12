@@ -74,11 +74,11 @@
             <div class="h2-container fadein fade to-bottom">
                 <h2>PROFILE</h2>
             </div>
-            <div class="detail-container fadein fade to-bottom">
-                <figure class="profile-img">
+            <div class="detail-container">
+                <figure class="profile-img fadein fade to-left">
                     <img src="IMG/증명사진.png" alt="증명사진">
                 </figure>
-                <div class="about-me-container">
+                <div class="about-me-container fadein fade to-right">
                     <h3>About me</h3>
                     <ul class="about-me-tg">
                         <li>
@@ -261,7 +261,7 @@
                                 &#34;기본에 충실하게&#34;
                             </p>
                             <span>
-                                화려한 도구없이 망치와 못으로만 집을 지을 수 있어야 <br class="responsive-br-introduction"> 
+                                화려한 도구없이 망치와 못으로만 집을 지을 수 있어야 <br class="responsive-br-introduction">
                                 역량이 큰 사람이라는 선생님의 말씀을 새기며<br>
                                 기본에 충실히 공부하였습니다.
                                 시맨틱 코드를 이용해<br class="responsive-br-introduction"> 유지보수가 쉬운 마크업을 위해 노력합니다.
@@ -420,7 +420,21 @@
             </div>
         </div>
     </section>
+    
     <script>
+        // 페이지 로드 시 모달창 띄우기
+        document.addEventListener('DOMContentLoaded', () => {
+            const modalOverlay = document.getElementById('modalOverlay');
+            const confirmButton = document.getElementById('confirmButton');
+
+            // 모달 보이기
+            modalOverlay.style.display = 'flex';
+
+            // 버튼 클릭 시 이동
+            confirmButton.addEventListener('click', () => {
+                window.location.href = 'https://www.example.com'; // 이동할 URL
+            });
+        });
     </script>
     <script src="JS/tab_menu.js"></script>
     <script src="JS/star_bg.js"></script>
