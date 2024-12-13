@@ -3,156 +3,133 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Multi Modal Example</title>
+  <title>Portfolio</title>
   <style>
-    /* 공통 스타일 */
-    body {
-      font-family: Arial, sans-serif;
+
+/* 
+    .container {
+      text-align: center;
+      padding: 50px;
+    } */
+
+    .link-button {
+      display: inline-block;
+      margin: 20px;
+      padding: 15px 30px;
+      font-size: 18px;
+      color: white;
+      background-color: #007BFF;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      cursor: pointer;
     }
 
-    /* 모달창 배경 */
-    .modalOverlay {
+    .link-button:hover {
+      background-color: #0056b3;
+    }
+
+    .modal {
+      display: none;
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.7);
-      display: none; /* 초기에는 보이지 않음 */
+      background-color: rgba(0, 0, 0, 0.8);
       justify-content: center;
       align-items: center;
-      z-index: 1000;
     }
 
-    /* 모달창 스타일 */
-    .modal {
-      background: white;
+    .modal-content {
+      background-color: white;
       padding: 20px;
       border-radius: 10px;
-      width: 95%;
-      max-width: 800px; /* 모달 최대 너비 */
-      height: 90%;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-      position: relative; /* 닫기 버튼 배치에 필요 */
+      width: 80%;
+      max-width: 600px;
+      height: 70%;
+      overflow-y: auto;
+      position: relative;
     }
 
-    /* 닫기(X) 버튼 스타일 */
-    .closeButton {
+    .close-button {
       position: absolute;
       top: 10px;
       right: 10px;
-      background: none;
+      background-color: #ff5e57;
+      color: white;
       border: none;
-      font-size: 20px;
-      font-weight: bold;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
       cursor: pointer;
-    }
-
-    .closeButton:hover {
-      color: red;
-    }
-
-    /* 모달 내용 */
-    .modalContent {
-      flex: 1; /* 스크롤 가능한 영역 */
-      overflow-y: auto;
-      margin-bottom: 20px;
+      font-size: 18px;
       text-align: center;
     }
 
-    /* 이미지 스타일 */
-    .modalContent img {
-      width: 100%;
-      height: auto;
-      display: block;
-      margin: 0 auto;
+    .close-button:hover {
+      background-color: #e04848;
     }
 
-    /* 이동 버튼 */
-    .confirmButton {
-      background-color: #007BFF;
-      color: white;
+    .visit-site-button {
+      display: block;
+      margin: 20px auto 0;
       padding: 10px 20px;
+      font-family: "Crimson Pro";
+      font-size: 16px;
+      color: white;
+      background-color: #3b3b3b;
       border: none;
       border-radius: 5px;
+      text-decoration: none;
       cursor: pointer;
-      font-size: 16px;
+      text-align: center;
     }
 
-    .confirmButton:hover {
-      background-color: #0056b3;
+    .visit-site-button:hover {
+      background-color: #218838;
     }
   </style>
 </head>
 <body>
-  <!-- 버튼 1 -->
-  <button class="openModalButton" data-modal="modal1" data-url="https://www.example1.com" data-image="IMG/atsearch기획서1.png">
-    첫 번째 기획서 보기
-  </button>
-
-  <!-- 버튼 2 -->
-  <button class="openModalButton" data-modal="modal2" data-url="https://www.example2.com" data-image="IMG/atsearch기획서2.png">
-    두 번째 기획서 보기
-  </button>
-
-  <!-- 모달 1 -->
-  <div class="modalOverlay" id="modal1">
-    <div class="modal">
-      <button class="closeButton">&times;</button>
-      <div class="modalContent">
-        <img src="IMG/atsearch기획서.png" alt="기획서 이미지">
-      </div>
-      <button class="confirmButton">첫 번째 사이트로 이동</button>
-    </div>
+  <div class="container">
+    <button class="link-button" onclick="openModal('site1')">VIEW</button>
+    <button class="link-button" onclick="openModal('site2')">VIEW</button>
   </div>
 
-  <!-- 모달 2 -->
-  <div class="modalOverlay" id="modal2">
-    <div class="modal">
-      <button class="closeButton">&times;</button>
-      <div class="modalContent">
-        <img src="IMG/FurnitureLab기획서.png" alt="기획서 이미지">
+  <!-- Modal -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <button class="close-button" onclick="closeModal()">&times;</button>
+      <div id="modal-body">
+        <!-- Content will be dynamically loaded -->
       </div>
-      <button class="confirmButton">두 번째 사이트로 이동</button>
     </div>
   </div>
 
   <script>
-    // 모든 열기 버튼과 닫기 버튼 가져오기
-    const openModalButtons = document.querySelectorAll('.openModalButton');
-    const closeButtons = document.querySelectorAll('.closeButton');
+    const modal = document.getElementById('modal');
+    const modalBody = document.getElementById('modal-body');
 
-    // 열기 버튼 클릭 시 모달 열기
-    openModalButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const modalId = button.getAttribute('data-modal'); // 열릴 모달 ID
-        const imageUrl = button.getAttribute('data-image'); // 표시할 이미지 URL
-        const targetUrl = button.getAttribute('data-url'); // 이동할 URL
+    const siteContents = {
+      site1: `
+        <img src="IMG/atsearch기획서.png" alt="At Search 기획서 이미지" style="width:100%; height:auto;">
+        <a href="https://wishu92.github.io/At_search/" target="_blank" class="visit-site-button"> At Search site </a>
+      `,
+      site2: `
+        <img src="IMG/FurnitureLab기획서.png" alt="Furniture Lab 기획서 이미지" style="width:100%; height:auto;">
+        <a href="https://wishu92.github.io/Furniture_Lab/" target="_blank" class="visit-site-button"> Furniture Lab site </a>
+      `
+    };
 
-        const modal = document.getElementById(modalId);
-        const modalImage = modal.querySelector('img');
-        const confirmButton = modal.querySelector('.confirmButton');
+    function openModal(siteKey) {
+      modalBody.innerHTML = siteContents[siteKey];
+      modal.style.display = 'flex';
+    }
 
-        // 모달 내용 설정
-        modalImage.src = imageUrl;
-        confirmButton.onclick = () => {
-          window.location.href = targetUrl; // 사이트로 이동
-        };
-
-        // 모달 보이기
-        modal.style.display = 'flex';
-      });
-    });
-
-    // 닫기 버튼 클릭 시 모달 닫기
-    closeButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const modal = button.closest('.modalOverlay');
-        modal.style.display = 'none';
-      });
-    });
+    function closeModal() {
+      modal.style.display = 'none';
+    }
   </script>
 </body>
 </html>
