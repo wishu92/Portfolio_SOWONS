@@ -62,7 +62,7 @@
 }
 
 .visit-site-button:hover {
-    background-color: #2a2a2a;
+    background-color: #3b3b3b;
     border: 1px solid var(--accent-color);
     color: var(--main-text-color);
     transition: background-color 0.5s, 
