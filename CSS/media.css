@@ -411,6 +411,7 @@
 
     .profile-page {
         padding: 80px 0;
+        gap: 50px;
     }
 
     h2 {
@@ -448,6 +449,10 @@
     .about-me-explain {
         font-size: 18px;
         line-height: 24px;
+    }
+
+    .skill-container {
+        gap: 30px;
     }
 
     .line-vertical::before,
