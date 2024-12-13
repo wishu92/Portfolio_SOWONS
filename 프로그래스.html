@@ -26,9 +26,8 @@
 
         .progress-bar {
             position: relative;
-            width: 200px;
-            /* 초기 크기 */
-            height: 200px;
+            width: 180px;
+            height: 180px;
             /* 초기 크기 */
             text-align: center;
             background: #ffffff;
@@ -54,7 +53,7 @@
 
         .progress-bar circle:nth-child(1) {
             stroke: #f0f0f0;
-            /* 배경용 */
+            /* 프로그래스바 배경 */
         }
 
         .progress-bar circle:nth-child(2) {
@@ -105,32 +104,37 @@
             stroke: #4290d6;
         }
 
-        /* 반응형 디자인 */
         @media screen and (max-width: 1024px) {
-            .progress-bar {
-                width: 180px;
-                height: 180px;
-            }
-        }
-
-        @media screen and (max-width: 768px) {
             .progress-bar {
                 width: 160px;
                 height: 160px;
             }
         }
 
-        @media screen and (max-width: 480px) {
+        @media screen and (max-width: 768px) {
             .progress-bar {
                 width: 140px;
                 height: 140px;
             }
         }
 
-        @media screen and (max-width: 360px) {
+        @media screen and (max-width: 570px) {
             .progress-bar {
                 width: 120px;
                 height: 120px;
+            }
+            .progress-container {
+                gap: 20px;
+            }
+        }
+
+        @media screen and (max-width: 440px) {
+            .progress-bar {
+                width: 110px;
+                height: 110px;
+            }
+            .progress-container {
+                gap: 10px;
             }
         }
     </style>
