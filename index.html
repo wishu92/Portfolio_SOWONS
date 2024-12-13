@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="CSS/circle_progress.css">
     <link rel="stylesheet" href="CSS/media.css">
     <link rel="stylesheet" href="CSS/scroll_fade_in.css">
+    <link rel="stylesheet" href="CSS/modal.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -338,7 +339,7 @@
                         </li>
                     </ul>
                     <div class="view-button wrapper at_search_button">
-                        <a class="button" href="https://wishu92.github.io/At_search/">VIEW</a>
+                        <button class="link-button" onclick="openModal('site1')">VIEW</button>
                     </div>
                 </div>
                 <figure class="imac fadein fade to-right">
@@ -348,6 +349,7 @@
                     </div>
                 </figure>
             </div>
+
             <div class="project furniture">
                 <figure class="imac fadein fade to-left">
                     <img src="IMG/iMac.png" alt="imac-img">
@@ -379,9 +381,16 @@
                         </li>
                     </ul>
                     <div class="view-button wrapper furniture-button">
-                        <a class="button" href="https://wishu92.github.io/Furniture_Lab/">VIEW</a>
+                        <button class="link-button" onclick="openModal('site2')">VIEW</button>
                     </div>
                 </div>
+            </div>
+        </div>
+        <!-- 모달창 -->
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <button class="close-button" onclick="closeModal()">&times;</button>
+                <div id="modal-body"></div>
             </div>
         </div>
     </section>
@@ -420,7 +429,7 @@
             </div>
         </div>
     </section>
-    
+
     <script>
 
     </script>
@@ -430,11 +439,7 @@
     <script src="JS/circle_progress.js"></script>
     <script src="JS/scroll_fade_in.js"></script>
     <script src="JS/typing.js"></script>
+    <script src="JS/modal.js"></script>
 </body>
 
 </html>
-
-<!--
-1. 퍼니처랩 페이드인 슬라이드
-5. 프로그래스바 반응형
- -->
