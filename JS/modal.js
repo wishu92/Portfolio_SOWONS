@@ -15,10 +15,16 @@ const siteContents = {
 function openModal(siteKey) {
   modalBody.innerHTML = siteContents[siteKey];
   modal.style.display = 'flex';
-  document.body.classList.add('modal-open');
 }
 
 function closeModal() {
   modal.style.display = 'none';
-  document.body.classList.remove('modal-open');
 }
+
+// 모달 외부 클릭으로 닫기
+modal.addEventListener('click', (event) => {
+  if (event.target === modal) {
+    closeModal();
+  }
+});
+
